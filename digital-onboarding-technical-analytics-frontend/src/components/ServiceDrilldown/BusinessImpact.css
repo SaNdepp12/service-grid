@@ -1,0 +1,52 @@
+.business-impact-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.business-impact-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.business-impact-title-row p,
+.business-impact-row p {
+  color: var(--text-muted);
+}
+
+.business-impact-title-row span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #ef4444;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+}
+
+.business-impact-row {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.business-impact-row p {
+  text-align: right;
+}
+
+.business-impact-bar {
+  margin-top: 8px;
+  background: #dbeafe;
+  height: 6px;
+  border-radius: 999px;
+  width: min(780px, 100%);
+}
+
+.business-impact-bar div {
+  background: #2563eb;
+  height: 100%;
+  border-radius: 999px;
+}

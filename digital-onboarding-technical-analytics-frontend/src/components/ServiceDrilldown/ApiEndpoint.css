@@ -1,0 +1,62 @@
+.api-endpoint-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.api-endpoint-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.api-endpoint-title-row input {
+  background: var(--bg-card-inner);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 8px 10px;
+  width: 210px;
+  color: var(--text-muted);
+}
+
+.api-endpoint-table-wrap {
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.method-pill {
+  border: 1px solid #93c5fd;
+  color: #2563eb;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.success-line {
+  margin-top: 4px;
+  height: 4px;
+  width: 82px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e, #34d399);
+}
+
+.api-endpoint-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.api-endpoint-table-wrap th,
+.api-endpoint-table-wrap td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 14px;
+}
+
+.api-endpoint-table-wrap th {
+  color: var(--text-muted);
+  font-weight: 700;
+}
