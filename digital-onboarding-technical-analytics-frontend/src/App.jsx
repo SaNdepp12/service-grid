@@ -4,7 +4,10 @@ import { fetchDashboard } from "./api/dashboardApi";
 import { useAutoRefresh } from "./hooks/useAutoRefresh";
 import { useTimeFilter } from "./hooks/useTimeFilter";
 import ObservabilityHeader from "./components/ObservabilityHeader";
-import { ObservabilityHeaderProvider, useObservabilityHeader } from "./context/ObservabilityHeaderContext.jsx";
+import {
+  ObservabilityHeaderProvider,
+  useObservabilityHeader,
+} from "./context/ObservabilityHeaderContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import KpiMetricCards from "./components/KpiMetricCards";
 import HealthDonut from "./components/HealthDonut";
@@ -26,18 +29,32 @@ export default function App() {
       <ObservabilityHeaderProvider>
         <div className="appRoot">
           <ObservabilityHeader />
+
           <main className="content">
             <Routes>
               <Route path="/" element={<DashboardWrapper />} />
-              <Route path="/techops/journey/:journeyName" element={<Overview />} />
+              <Route
+                path="/techops/journey/:journeyName"
+                element={<Overview />}
+              />
               <Route path="/pages/journeys" element={<JourneysPage />} />
               <Route path="/pages/services" element={<ServicesPage />} />
-              <Route path="/pages/api-explorer" element={<ApiExplorerPage />} />
+              <Route
+                path="/pages/api-explorer"
+                element={<ApiExplorerPage />}
+              />
               <Route path="/pages/alerts" element={<AlertsPage />} />
-              <Route path="/techops/service/:name" element={<ServiceDrilldownPage />} />
-              <Route path="/techops/drilldown/:type/:name" element={<UnderMaintenance />} />
+              <Route
+                path="/techops/service/:name"
+                element={<ServiceDrilldownPage />}
+              />
+              <Route
+                path="/techops/drilldown/:type/:name"
+                element={<UnderMaintenance />}
+              />
             </Routes>
           </main>
+
           <Footer />
         </div>
       </ObservabilityHeaderProvider>
@@ -50,34 +67,49 @@ function DashboardWrapper() {
 
   const refreshData = useCallback(() => {
     const { durationMs } = getTimeRange();
-    // Convert duration milliseconds to hours, min 1 hour
-    const windowHours = Math.max(1, Math.round(durationMs / (1000 * 60 * 60)));
+
+    // Convert milliseconds → hours (minimum 1 hour)
+    const windowHours = Math.max(
+      1,
+      Math.round(durationMs / (1000 * 60 * 60))
+    );
+
     return fetchDashboard(windowHours);
   }, [getTimeRange]);
 
   const autoRefreshDeps = useMemo(() => [refreshData], [refreshData]);
-  const { data, loading, error } = useAutoRefresh(refreshData, 300000, autoRefreshDeps);
+
+  const { data, loading, error } = useAutoRefresh(
+    refreshData,
+    300000,
+    autoRefreshDeps
+  );
 
   const { setIsConnected } = useObservabilityHeader();
 
   useEffect(() => {
     if (!loading) {
-      // It's genuinely live only if data is fetched from a real backend ('live' source)
-      setIsConnected(data?.source === 'live' && !!data && !error);
+      setIsConnected(data?.source === "live" && !!data && !error);
     }
   }, [data, loading, error, setIsConnected]);
 
   const jh = data?.journeyHealth;
 
-  const donutData = useMemo(() => ({
-    stableJourneys: jh?.stable || 0,
-    degradedJourneys: jh?.degraded || 0,
-    criticalJourneys: jh?.critical || 0,
-    healthPercentage: jh?.percentage || 0
-  }), [jh]);
+  const donutData = useMemo(
+    () => ({
+      stableJourneys: jh?.stable || 0,
+      degradedJourneys: jh?.degraded || 0,
+      criticalJourneys: jh?.critical || 0,
+      healthPercentage: jh?.percentage || 0,
+    }),
+    [jh]
+  );
 
-  if (loading) return <div className="loading">Loading dashboard...</div>;
-  if (!loading && error) return <div className="loading error">{error}</div>;
+  if (loading)
+    return <div className="loading">Loading dashboard...</div>;
+
+  if (!loading && error)
+    return <div className="loading error">{error}</div>;
 
   return (
     <>
@@ -85,6 +117,7 @@ function DashboardWrapper() {
         <div className="layout-left">
           <HealthDonut data={donutData} />
         </div>
+
         <div className="layout-right">
           {data?.kpis && <KpiMetricCards kpis={data.kpis} />}
         </div>
@@ -102,10 +135,8 @@ function DashboardWrapper() {
         </section>
       )}
 
-      {/* API Stats Section Removed */}
-
       <section id="alerts" className="dashboard-section">
-        {/* Alert section placeholder if needed, for consistency with 'Alert' tab */}
+        {/* Alert section placeholder */}
       </section>
     </>
   );
