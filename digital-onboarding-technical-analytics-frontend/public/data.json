@@ -1,0 +1,408 @@
+{
+    "kpis": {
+        "totalRequests": {
+            "value": 2400000,
+            "deltaPct": -3.2,
+            "compareLabel": "vs Yesterday"
+        },
+        "p95Latency": {
+            "value": 142,
+            "deltaMs": -8,
+            "compareLabel": "improvement"
+        },
+        "error5xx": {
+            "value": 0.12,
+            "deltaPct": 0.03,
+            "compareLabel": "from baseline"
+        },
+        "error4xx": {
+            "value": 1.8,
+            "deltaPct": -0.1,
+            "compareLabel": "improved"
+        }
+    },
+    "journeyHealth": {
+        "stable": 12,
+        "degraded": 2,
+        "critical": 1,
+        "percentage": 98.7
+    },
+    "journeyCategories": [
+        {
+            "name": "ASSETS OPERATIONS",
+            "journeys": [
+                {
+                    "name": "Gold Loan",
+                    "status": "Stable",
+                    "volume": 1240,
+                    "success": 99.2,
+                    "abandon": 0.5,
+                    "failure": 0.3,
+                    "uptime": 99.9,
+                    "p95": 185,
+                    "services": 8
+                },
+                {
+                    "name": "Home Loan",
+                    "status": "Stable",
+                    "volume": 950,
+                    "success": 98.8,
+                    "abandon": 0.8,
+                    "failure": 0.4,
+                    "uptime": 99.7,
+                    "p95": 210,
+                    "services": 6
+                }
+            ]
+        },
+        {
+            "name": "CARDS OPERATIONS",
+            "journeys": [
+                {
+                    "name": "Credit Card",
+                    "status": "Stable",
+                    "volume": 4500,
+                    "success": 97.5,
+                    "abandon": 1.5,
+                    "failure": 1.0,
+                    "uptime": 99.5,
+                    "p95": 320,
+                    "services": 15
+                },
+                {
+                    "name": "Forex Card",
+                    "status": "Degraded",
+                    "volume": 680,
+                    "success": 76.0,
+                    "abandon": 12.0,
+                    "failure": 12.0,
+                    "uptime": 94.2,
+                    "p95": 850,
+                    "services": 4
+                }
+            ]
+        },
+        {
+            "name": "LIABILITIES OPERATIONS",
+            "journeys": [
+                {
+                    "name": "Saving Accounts",
+                    "status": "Stable",
+                    "volume": 8200,
+                    "success": 99.8,
+                    "abandon": 0.1,
+                    "failure": 0.1,
+                    "uptime": 100,
+                    "p95": 120,
+                    "services": 10
+                },
+                {
+                    "name": "Fixed Deposits",
+                    "status": "Stable",
+                    "volume": 1100,
+                    "success": 99.0,
+                    "abandon": 0.5,
+                    "failure": 0.5,
+                    "uptime": 99.9,
+                    "p95": 145,
+                    "services": 5
+                }
+            ]
+        },
+        {
+            "name": "THIRD PARTY OPERATIONS",
+            "journeys": [
+                {
+                    "name": "Stripe Gateway",
+                    "status": "Stable",
+                    "volume": 3200,
+                    "success": 98.2,
+                    "abandon": 1.2,
+                    "failure": 0.6,
+                    "uptime": 99.8,
+                    "p95": 410,
+                    "services": 3
+                },
+                {
+                    "name": "KYC Services",
+                    "status": "Critical",
+                    "volume": 450,
+                    "success": 36.5,
+                    "abandon": 35.0,
+                    "failure": 28.5,
+                    "uptime": 88.0,
+                    "p95": 1200,
+                    "services": 7
+                }
+            ]
+        }
+    ],
+    "services": [
+        {
+            "id": "AU",
+            "name": "AUTH",
+            "status": "Healthy"
+        },
+        {
+            "id": "AC",
+            "name": "ACCOUNT",
+            "status": "Healthy"
+        },
+        {
+            "id": "PY",
+            "name": "PAYMENT",
+            "status": "Healthy"
+        },
+        {
+            "id": "KY",
+            "name": "KYC",
+            "status": "Healthy"
+        },
+        {
+            "id": "NT",
+            "name": "NOTIFY",
+            "status": "Warning"
+        },
+        {
+            "id": "DC",
+            "name": "DOCUMENT",
+            "status": "Healthy"
+        },
+        {
+            "id": "PF",
+            "name": "Profile",
+            "status": "Healthy"
+        },
+        {
+            "id": "EM",
+            "name": "Email",
+            "status": "Healthy"
+        },
+        {
+            "id": "SM",
+            "name": "SMS",
+            "status": "Healthy"
+        },
+        {
+            "id": "AD",
+            "name": "Audit",
+            "status": "Healthy"
+        },
+        {
+            "id": "CF",
+            "name": "Config",
+            "status": "Healthy"
+        },
+        {
+            "id": "GW",
+            "name": "Gateway",
+            "status": "Healthy"
+        },
+        {
+            "id": "CA",
+            "name": "Cache",
+            "status": "Healthy"
+        },
+        {
+            "id": "LM",
+            "name": "Loan",
+            "status": "Healthy"
+        },
+        {
+            "id": "DS",
+            "name": "Disburse",
+            "status": "Critical"
+        },
+        {
+            "id": "FT",
+            "name": "Transfer",
+            "status": "Warning"
+        },
+        {
+            "id": "UP",
+            "name": "UPI",
+            "status": "Healthy"
+        },
+        {
+            "id": "FD",
+            "name": "FD",
+            "status": "Healthy"
+        },
+        {
+            "id": "IN",
+            "name": "Insurance",
+            "status": "Healthy"
+        },
+        {
+            "id": "MF",
+            "name": "Mutual Funds",
+            "status": "Healthy"
+        },
+        {
+            "id": "CC",
+            "name": "Credit Card",
+            "status": "Healthy"
+        },
+        {
+            "id": "CI",
+            "name": "Card Issuer",
+            "status": "Critical"
+        },
+        {
+            "id": "CB",
+            "name": "Credit Bureau",
+            "status": "Warning"
+        },
+        {
+            "id": "RK",
+            "name": "Risk",
+            "status": "Warning"
+        },
+        {
+            "id": "BP",
+            "name": "Bill Pay",
+            "status": "Healthy"
+        },
+        {
+            "id": "BB",
+            "name": "Biller",
+            "status": "Healthy"
+        },
+        {
+            "id": "SC",
+            "name": "Scheduler",
+            "status": "Healthy"
+        },
+        {
+            "id": "WK",
+            "name": "Work Flow",
+            "status": "Healthy"
+        },
+         {
+            "id": "RP",
+            "name": "Report",
+            "status": "Healthy"
+        },
+         {
+            "id": "AN",
+            "name": "Analytics",
+            "status": "Healthy"
+        },
+         {
+            "id": "LG",
+            "name": "Logging",
+            "status": "Healthy"
+        },
+         {
+            "id": "MN",
+            "name": "Monitor",
+            "status": "Healthy"
+        },
+         {
+            "id": "RG",
+            "name": "Registry",
+            "status": "Healthy"
+        },
+        {
+            "id": "DQ",
+            "name": "Data Queue",
+            "status": "Healthy"
+        },
+        {
+            "id": "FS",
+            "name": "File Store",
+            "status": "Healthy"
+        },
+        {
+            "id": "SL",
+            "name": "Search",
+            "status": "Healthy"
+        },
+        {
+            "id": "TM",
+            "name": "Template",
+            "status": "Healthy"
+        },
+        {
+            "id": "RT",
+            "name": "Rate Limit",
+            "status": "Healthy"
+        },
+        {
+            "id": "ED",
+            "name": "Event Drv",
+            "status": "Healthy"
+        },
+        {
+            "id": "TR",
+            "name": "Transform",
+            "status": "Healthy"
+        }
+    ],
+    "apiStats": {
+        "topErrors": [
+            {
+                "id": 1,
+                "method": "POST",
+                "path": "/cards/issue",
+                "value": 5.8
+            },
+            {
+                "id": 2,
+                "method": "POST",
+                "path": "/risk/evaluate",
+                "value": 2.1
+            },
+            {
+                "id": 3,
+                "method": "GET",
+                "path": "/credit/score",
+                "value": 1.4
+            },
+            {
+                "id": 4,
+                "method": "POST",
+                "path": "/loan/disburse",
+                "value": 0.9
+            },
+            {
+                "id": 5,
+                "method": "POST",
+                "path": "/biller/pay",
+                "value": 0.7
+            }
+        ],
+        "slowest": [
+            {
+                "id": 1,
+                "method": "POST",
+                "path": "/cards/issue",
+                "value": "1.4s"
+            },
+            {
+                "id": 2,
+                "method": "GET",
+                "path": "/credit/score",
+                "value": "950ms"
+            },
+            {
+                "id": 3,
+                "method": "POST",
+                "path": "/risk/evaluate",
+                "value": "720ms"
+            },
+            {
+                "id": 4,
+                "method": "GET",
+                "path": "/biller/fetch",
+                "value": "480ms"
+            },
+            {
+                "id": 5,
+                "method": "POST",
+                "path": "/insurance/quote",
+                "value": "390ms"
+            }
+        ]
+    }
+}

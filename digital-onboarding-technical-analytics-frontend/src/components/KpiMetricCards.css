@@ -1,0 +1,119 @@
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin: 0;
+  flex: 1;
+}
+
+.kpiCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 8px 15px;
+  min-height: 132px;
+  box-shadow: var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kpiTitle {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.kpiValue {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.kpiTrend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.kpiArrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.kpiTrendHi {
+  font-weight: 400;
+}
+
+.kpiTrendRest {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.kpiArrow.good,
+.kpiTrendHi.good {
+  color: #10b981;
+}
+
+.kpiArrow.bad,
+.kpiTrendHi.bad {
+  color: #ef4444;
+}
+
+.kpiArrow.neutral,
+.kpiTrendHi.neutral {
+  color: var(--text-muted);
+}
+
+/* AC3 tone accents */
+.kpiCard.tone-green {
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.kpiCard.tone-amber {
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
+.kpiCard.tone-red {
+  border-color: rgba(239, 68, 68, 0.28);
+}
+
+.kpiCard.tone-neutral {
+  border-color: var(--border-subtle);
+}
+
+@media (max-width: 900px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .kpiCard {
+    min-height: 140px;
+    padding: 8px 15px;
+  }
+
+  .kpiTitle {
+    font-size: 13px;
+  }
+
+  .kpiValue {
+    font-size: 36px;
+  }
+
+  .kpiTrend {
+    font-size: 13px;
+  }
+}

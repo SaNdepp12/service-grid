@@ -1,0 +1,25 @@
+.serviceGridTiles {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1400px) {
+  .serviceGridTiles {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .serviceGridTiles {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .serviceGridTiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

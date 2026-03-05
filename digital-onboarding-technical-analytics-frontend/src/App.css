@@ -1,0 +1,198 @@
+:root {
+  /* LIGHT THEME */
+  --app-bg: #f8fafc;
+  --header-bg: #002d5d;
+  --bg-card: #ffffff;
+  --bg-card-inner: #f9fafb;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-subtle: #e2e8f0;
+
+  --color-green: #10b981;
+  --color-amber: #f59e0b;
+  --color-red: #ef4444;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+
+  --bg-critical: #fee2e2;
+  --border-critical: #fecaca;
+  --text-critical: #ef4444;
+
+  --bg-warning: #fff7ed;
+  --border-warning: #ffedd5;
+  --text-warning: #f59e0b;
+
+  --bg-success: #f0fdf4;
+  --border-success: #dcfce7;
+  --text-success: #22c55e;
+}
+
+[data-theme='dark'] {
+  /* DARK THEME */
+  --app-bg: #0f172a;
+  --header-bg: #020617;
+  --bg-card: #1e293b;
+  --bg-card-inner: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --border-subtle: #475569;
+
+  --color-green: #34d399;
+  --color-amber: #fbbf24;
+  --color-red: #f87171;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+
+  --bg-critical: rgba(239, 68, 68, 0.1);
+  --border-critical: rgba(239, 68, 68, 0.2);
+  --text-critical: #fca5a5;
+
+  --bg-warning: rgba(245, 158, 11, 0.1);
+  --border-warning: rgba(245, 158, 11, 0.2);
+  --text-warning: #fcd34d;
+
+  --bg-success: rgba(34, 197, 94, 0.1);
+  --border-success: rgba(34, 197, 94, 0.2);
+  --text-success: #86efac;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.appRoot {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 40px 70px 16px;
+  max-width: 1720px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+  zoom: 0.9;
+}
+
+@supports not (zoom: 1) {
+  .content {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}
+
+.dashboard-layout {
+  display: flex;
+  flex-wrap: wrap;
+  /* Enforce wrapping */
+  gap: 30px;
+  align-items: stretch;
+  /* Match heights if possible */
+  margin-bottom: 24px;
+}
+
+.dashboard-section {
+  margin-top: 24px;
+  width: 100%;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll on sections */
+}
+
+.layout-left {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* Allow shrinking/growing, min-width 500px */
+}
+
+.layout-right {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* Allow shrinking/growing, min-width 400px */
+}
+
+@media (max-width: 1200px) {
+  .content {
+    padding: 28px 32px 16px;
+  }
+
+  .dashboard-layout {
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboard-layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 16px 16px 12px;
+  }
+
+  .dashboard-layout {
+    gap: 16px;
+  }
+
+  .layout-left,
+  .layout-right {
+    flex: 1 1 100%;
+    max-width: 100vw;
+  }
+
+  .dashboard-section {
+    margin-top: 24px;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+.loading.error {
+  color: #ef4444;
+}
+
+/* Enhancements for Drill-down / Hover effects */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  cursor: pointer;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 12px 12px 10px;
+  }
+
+  .dashboard-section {
+    margin-top: 18px;
+  }
+
+  .loading {
+    padding: 28px 12px;
+    font-size: 1rem;
+  }
+}
