@@ -16,6 +16,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ApiExplorerPage from "./pages/ApiExplorerPage";
 import AlertsPage from "./pages/AlertsPage";
 import UnderMaintenance from "./pages/UnderMaintenance";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -33,7 +34,7 @@ export default function App() {
               <Route path="/pages/services" element={<ServicesPage />} />
               <Route path="/pages/api-explorer" element={<ApiExplorerPage />} />
               <Route path="/pages/alerts" element={<AlertsPage />} />
-              <Route path="/techops/service/:name" element={<UnderMaintenance />} />
+              <Route path="/techops/service/:name" element={<ServiceDetailPage />} />
               <Route path="/techops/drilldown/:type/:name" element={<UnderMaintenance />} />
             </Routes>
           </main>
